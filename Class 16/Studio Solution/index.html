@@ -1,34 +1,16 @@
-<!doctype html>
-
-<head>
-	<meta charset="utf-8">
-	<script>
-		// TODO: create a handler
-    window.addEventListener("load", function(){
-      let engineMap = {
-        'google': 'https://www.google.com/search',
-        'duckDuckGo': 'https://duckduckgo.com/',
-        'bing': 'https://www.bing.com/search',
-        'ask': 'https://www.ask.com/web',
-      }
-      let form = document.getElementById("searchForm")
-      form.addEventListener("submit", function (e) {
-        let searchEngine = document.querySelector("input[name=engine]:checked").value
-        form.setAttribute("action", engineMap[searchEngine])
-      })
-    });
-  </script>
-</head>
-
-<body>
-
-	<form id="searchForm">
-    <input name="q" />
-    <label>Google<input type="radio" name="engine" value="google"/></label> | 
-    <label>DuckDuckGo<input type="radio" name="engine" value="duckDuckGo"/></label> |
-    <label>Bing<input type="radio" name="engine" value="bing"/></label> |
-    <label>Ask<input type="radio" name="engine" value="ask"/></label>
-    <button>Go!</button>
-	</form>
-
-</body>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Astronauts</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <script src="script.js"></script>
+    <h1>Astronauts</h1>
+    <div id="container">
+        <!-- List of astronauts will be added here dynamically -->
+    </div>
+  </body>
+</html>
