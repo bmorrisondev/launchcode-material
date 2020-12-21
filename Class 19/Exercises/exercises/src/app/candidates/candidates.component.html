@@ -1,0 +1,52 @@
+<div class="container">
+    <h2 class="centered">Mission Name: {{missionName}}</h2>
+    <br>
+    <div class="row justify-content-center">
+        <div class="candidates col-3">
+            <h2>Candidates</h2>
+            <ol>
+                <li *ngFor="let candidate of candidates" (click)="selected = candidate">{{ candidate.name }}</li>
+            </ol>
+        </div>
+
+        <div class="data col-3">
+            <h2>Candidate Data</h2>
+            <p *ngIf="selected"> <!-- Add an *ngIf to this tag to display the selected candidate's data-->
+                Name: {{selected.name}} <br />
+                Age: {{selected.data.age}} <br />
+                Mass: {{selected.data.mass}} <br />
+                Sidekick: {{selected.data.sidekick}} <br />
+            </p>
+        </div>
+
+        <div class="centered col-3">
+            <h2>Sidekick</h2>
+            <!-- Use *ngIf and the correct placeholder to display a sidekick's image -->
+            <img *ngIf="selected" src="{{selected.image}}" alt="OOPS! No image available."/>
+        </div>
+
+        <div class="crew col-3">
+            <h2>Selected Crew</h2>
+            <ul>
+                <li *ngFor="let crewCandidate of crew">{{ crewCandidate.name }}</li>
+            </ul>
+            <button (click)="crew = []">Clear Crew List</button>
+            <!-- Add a "Clear Crew List" button here. -->
+        </div>
+    </div>
+    <hr>
+    <div class = 'centered'>
+        <button (click)="selected = undefined">Clear Data & Image</button>
+        <button (click)="addToCrew(selected)">Send on Mission</button>
+        <!-- Add a "Send on Mission" button here. -->
+    </div>
+</div>
+
+<!-- The code below is for one of the Bonus Missions -->
+<ng-template #editMission>
+    <h2 class="centered">
+        Mission Name:
+        <!-- Add a keyup.enter event that calls the changeMissionName function. -->
+        <input #newName type="text"/>
+    </h2>
+</ng-template>

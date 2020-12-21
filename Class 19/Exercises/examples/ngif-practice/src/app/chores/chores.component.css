@@ -1,0 +1,23 @@
+.chores {
+    color: #ff4f33;
+}
+
+.doneChores {
+    color: #3c79b8;
+}
+
+.allowance {
+  color: rgb(10, 180, 95);
+  text-align: center;
+}
+
+h3 {
+    text-align: center;
+}
+
+img {
+    max-width: 15%;
+    height: auto;
+    display: block;
+    margin: auto;
+}
